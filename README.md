@@ -16,3 +16,5 @@
   * web address: `http://${DOMAIN}/rest/V1/ctrler/payment/response_callback`
   * the API name and function name can be different, e.g., response_callback => resp_cbk
 * `method`: php function name, e.g. [PaymentInterface.php#L12](/Api/PaymentInterface.php#L12) => [Payment.php#L23](/Model/Payment.php#L23)
+
+### API interface (`Api/PaymentInterface.php`)
