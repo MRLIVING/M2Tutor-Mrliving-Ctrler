@@ -18,3 +18,14 @@
 * `method`: php function name, e.g. [PaymentInterface.php#L12](/Api/PaymentInterface.php#L12) => [Payment.php#L23](/Model/Payment.php#L23)
 
 ### API interface (`Api/PaymentInterface.php`)
+```
+interface PaymentInterface
+{
+
+	/**
+	 * GET for Post api
+	 * @return string
+	 */
+	public function response_callback();
+}
+```
