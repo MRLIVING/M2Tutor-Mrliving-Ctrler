@@ -29,3 +29,5 @@ interface PaymentInterface
 	public function response_callback();
 }
 ```
+
+### di.xml (`etc/di.xml`)
