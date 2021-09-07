@@ -39,7 +39,7 @@ interface PaymentInterface
 ```
 Here we defined the interface and the implementation where the REST API call to. 
 * `for`: the interface of the REST API
-* `type`: the implementation of the interface
+* `type`: the class where we implemented the interface
 
 
 
