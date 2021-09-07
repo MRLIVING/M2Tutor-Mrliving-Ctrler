@@ -42,7 +42,7 @@ interface PaymentInterface
 }
 ```
 
-### Method Implementation ([`/Model/Payment.php`](/Model/Payment.php))
+### Method Implementation ([`/Model/Payment.php`](Model/Payment.php#L23))
 ```
 public function response_callback() 
 {
