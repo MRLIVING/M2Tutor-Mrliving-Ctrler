@@ -20,7 +20,17 @@
 * service
   * `class`: the corresponding interface 
 
-### API interface (`Api/PaymentInterface.php`)
+### di.xml (`etc/di.xml`)
+```
+<preference for="Mrliving\Ctrler\Api\PaymentInterface" 
+            type="Mrliving\Ctrler\Model\Payment"/>
+```
+Here we defined the interface and the implementation where the REST API call to. 
+* `for`: the interface of the REST API
+* `type`: the class where we implemented the interface
+
+
+### API interface ([`Api/PaymentInterface.php`](Api/PaymentInterface.php))
 ```
 interface PaymentInterface
 {
@@ -32,16 +42,28 @@ interface PaymentInterface
 }
 ```
 
-### di.xml (`etc/di.xml`)
+### Method Implementation ([`/Model/Payment.php`](/Model/Payment.php))
 ```
-<preference for="Mrliving\Ctrler\Api\PaymentInterface" 
-            type="Mrliving\Ctrler\Model\Payment"/>
+public function response_callback() 
+{
+	$oid      = $this->_req->getParam('oid');
+	$security = $this->_req->getParam('security');
+	$status   = $this->_req->getParam('status');		
+
+	if ('success' === $status) {
+		$this->_resp->setRedirect('/checkout/onepage/success')->sendResponse();
+		die();
+	}
+	elseif ('fail' === $status) {
+		$this->_resp->setRedirect('/checkout/onepage/failure')->sendResponse();
+		die();
+	}
+
+	$rs = implode(',', [$oid, $security, $status]);
+	return $rs;
+}
 ```
-Here we defined the interface and the implementation where the REST API call to. 
-* `for`: the interface of the REST API
-* `type`: the class where we implemented the interface
-
-
+In this implementation, we get the inputs from the Rest API parameters and redirect to payment result page based on the input.
 
 
 ## Reference
