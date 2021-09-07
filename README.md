@@ -67,4 +67,5 @@ In this implementation, we get the inputs from the Rest API parameters and redir
 
 
 ## Reference
-* [https://inchoo.net/magento-2/magento-2-custom-api/](https://inchoo.net/magento-2/magento-2-custom-api/)
+* [Custom API for Magento 2](https://inchoo.net/magento-2/magento-2-custom-api/)
+* [How to Create Custom Rest API in Magento 2](https://meetanshi.com/blog/create-custom-rest-api-in-magento-2/)
